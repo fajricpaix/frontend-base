@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-poppins);
+  
+  /* Dark theme colors */
+  --color-background-dark: #0a0a0a;
+  --color-foreground-dark: #ededed;
+  
+  /* Light theme colors */
+  --color-background-light: #ffffff;
+  --color-foreground-light: #1a1a1a;
+  
+  --color-transparent: transparent;
+
+  --color-primary: #7433FF;
+  --color-primary-hover: #5e26cc;
+
+  --color-success: #00a88a;
+  --color-success-hover: #007060;
+
+  --color-warning: #FF9900;
+  --color-warning-hover: #cc7a00;
+
+  --color-error: #D90000;
+  --color-error-hover: #b30000;
+
+  --color-info: #00ABF4;
+  --color-info-hover: #007bbf;
+}
+
+@layer base {
+  :root {
+    --background: var(--color-background-light);
+    --foreground: var(--color-foreground-light);
+  }
+
+  .dark {
+    --background: var(--color-background-dark);
+    --foreground: var(--color-foreground-dark);
+  }
+
+  html {
+    color-scheme: light;
+  }
+  
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), sans-serif;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer components {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  button {
+    cursor: pointer;
+  }
+}

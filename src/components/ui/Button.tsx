@@ -1,7 +1,11 @@
 import React from 'react';
-import { cn } from '@/lib/utils';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+// Add the cn function here
+export function cn(...classes: (string | undefined | null | false)[]) {
+  return classes.filter(Boolean).join(' ');
+}
+
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'default' | 'outline' | 'link' | 'primary' | 'success' | 'warning' | 'error' | 'info';
   size?: 'default' | 'sm' | 'lg' | 'icon' | 'xs' | 'xl';
   outline?: boolean;
@@ -52,4 +56,5 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
 Button.displayName = 'Button';
 
-export { Button, type ButtonProps };
+export { Button };
+export default Button;

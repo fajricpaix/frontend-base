@@ -1,0 +1,49 @@
+# Source files
+src/
+.next/
+.git/
+
+# Config files
+next.config.ts
+next-env.d.ts
+tsconfig.json
+tsconfig.lib.json
+tsconfig.build.tsbuildinfo
+tsconfig.tsbuildinfo
+rollup.config.js
+eslint.config.mjs
+postcss.config.mjs
+tailwind.config.js
+
+# Build artifacts (keep only dist/)
+*.tsbuildinfo
+
+# Development dependencies
+node_modules/
+yarn.lock
+package-lock.json
+
+# Documentation (kecuali README.md)
+*.md
+!README.md
+
+# Environment files
+.env*
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files
+**/*.test.*
+**/*.spec.*
+coverage/
+
+# Public assets (untuk Next.js dev)
+public/

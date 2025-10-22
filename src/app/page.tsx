@@ -1,10 +1,3 @@
-import {
-  AlertTriangleIcon,
-  CheckIcon,
-  InfoIcon,
-  PlusIcon,
-  XIcon
-} from "@/components/icons";
 import { Button } from "@/components/ui/Button";
 
 export default function Home() {
@@ -48,27 +41,6 @@ export default function Home() {
                 <Button variant="primary" size="default">Default</Button>
                 <Button variant="primary" size="lg">Large</Button>
                 <Button variant="primary" size="xl">Extra Large</Button>
-              </div>
-            </div>
-
-            <div className="mt-4 space-y-3">
-              <p className="text-lg font-semibold">Icon Buttons - Same Size, Different Colors</p>
-              <div className="flex items-center gap-4">
-                <Button variant="primary" size="icon">
-                  <PlusIcon size={16} />
-                </Button>
-                <Button variant="success" size="icon">
-                  <CheckIcon size={16} />
-                </Button>
-                <Button variant="warning" size="icon">
-                  <AlertTriangleIcon size={16} />
-                </Button>
-                <Button variant="error" size="icon">
-                  <XIcon size={16} />
-                </Button>
-                <Button variant="info" size="icon">
-                  <InfoIcon size={16} />
-                </Button>
               </div>
             </div>
 

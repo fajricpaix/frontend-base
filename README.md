@@ -1,40 +1,157 @@
-<<<<<<< HEAD
-# frontend-base
-=======
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# @fajricpaix/frontend-ui
 
-## Getting Started
+UI Component Library untuk React/Next.js projects den### 📁 Struktur Library yang Ter-export
 
-First, run the development server:
+- **Components**: Button (dengan semua variants dan cn utility built-in)
+- **Types**: Full TypeScript support dengan `.d.ts` filescript dan Tailwind CSS.
+
+## Instalasi
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Menggunakan yarn
+yarn add @fajricpaix/frontend-ui
+
+# Menggunakan npm
+npm install @fajricpaix/frontend-ui
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Penggunaan
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Import Components
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```tsx
+import { Button } from '@fajricpaix/frontend-ui';
+import type { ButtonProps } from '@fajricpaix/frontend-ui';
+```
 
-## Learn More
+### Button Component
 
-To learn more about Next.js, take a look at the following resources:
+```tsx
+import { Button } from '@fajricpaix/frontend-ui';
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+function App() {
+  return (
+    <div>
+      {/* Basic button */}
+      <Button>Click me</Button>
+      
+      {/* Button variants */}
+      <Button variant="primary">Primary</Button>
+      <Button variant="success">Success</Button>
+      <Button variant="warning">Warning</Button>
+      <Button variant="error">Error</Button>
+      <Button variant="info">Info</Button>
+      
+      {/* Button sizes */}
+      <Button size="xs">Extra Small</Button>
+      <Button size="sm">Small</Button>
+      <Button size="default">Default</Button>
+      <Button size="lg">Large</Button>
+      <Button size="xl">Extra Large</Button>
+      
+      {/* Outline buttons */}
+      <Button variant="primary" outline>Outline Primary</Button>
+      <Button variant="success" outline>Outline Success</Button>
+    </div>
+  );
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Utilities
 
-## Deploy on Vercel
+Button component sudah menyediakan utility `cn` secara internal, jadi Anda tidak perlu mengimport utility tambahan.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Development
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
->>>>>>> 842b59f (First commit)
+### Build Library
+
+```bash
+yarn build
+```
+
+### Development dengan Next.js
+
+```bash
+yarn dev
+```
+
+### Linting
+
+```bash
+yarn lint
+```
+
+## Struktur File
+
+```
+src/
+├── components/
+│   └── ui/
+│       └── Button.tsx (with cn utility included)
+└── index.ts
+```
+
+## TypeScript Support
+
+Library ini fully typed dengan TypeScript. Semua components memiliki proper type definitions yang akan memberikan IntelliSense dan type checking yang baik.
+
+## Styling
+
+Components menggunakan Tailwind CSS classes. Pastikan project Anda memiliki Tailwind CSS configured untuk styling yang optimal.
+
+## Publishing ke NPM
+
+### 1. Build Library
+```bash
+yarn build
+```
+
+### 2. Login ke NPM
+```bash
+npm login
+```
+
+### 3. Publish
+```bash
+npm publish --access public
+```
+
+## Cara Menggunakan di Project Lain
+
+Setelah di-publish, Anda dapat menginstall library ini di project lain:
+
+```bash
+# Di project Next.js/React lain
+yarn add @fajricpaix/frontend-ui
+```
+
+### Contoh Penggunaan
+```tsx
+import { Button } from '@fajricpaix/frontend-ui';
+
+function MyApp() {
+  return (
+    <div>
+      <Button variant="primary" size="lg">
+        Add Item
+      </Button>
+      
+      <Button variant="success" outline>
+        Save Changes
+      </Button>
+    </div>
+  );
+}
+```
+
+## Contributing
+
+1. Fork repository
+2. Create feature branch: `git checkout -b feature/amazing-feature`
+3. Commit changes: `git commit -m 'Add amazing feature'`
+4. Push to branch: `git push origin feature/amazing-feature`
+5. Open Pull Request
+
+## License
+
+MIT License - lihat file [LICENSE](LICENSE) untuk details.
